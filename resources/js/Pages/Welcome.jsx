@@ -1,39 +1,178 @@
 import { Link, Head } from '@inertiajs/react';
 import ApplicationLogo from '@/Components/ApplicationLogo';
+import { motion } from 'framer-motion';
+import Testimonials from '@/Components/Testimonials';
+
 
 export default function Welcome({ auth, laravelVersion, phpVersion }) {
-    const count = () => {
-        
-    };
+    const testimonials = [
+        {
+          author: 'Ayu, Content Creator Kuliner',
+          quote: 'Linxit.id tuh keren banget! Aku bisa bikin halaman bio yang keren, gampang banget buat ngatur konten, dan yang paling penting, aku bisa jual produk kulinerku langsung dari halaman bio. Makasih Linxit.id, sekarang aku bisa lebih fokus ngembangin bisnis kulinerku!',
+          image: 'https://via.placeholder.com/150' // Ganti dengan URL gambar profil Ayu
+        },
+        {
+          author: 'Budi, Pemilik Toko Online',
+          quote: 'Sejak pakai Linxit.id, aku jadi lebih gampang ngatur konten dan promo toko onlineku di Instagram. Customer juga jadi lebih gampang nge-klik link yang aku share di bio. Aku bisa ngelacak semua data pengunjung dan klik, jadi aku bisa lebih fokus ngembangin strategi marketing!',
+          image: 'https://via.placeholder.com/150' // Ganti dengan URL gambar profil Budi
+        },
+        {
+          author: 'Citra, Influencer Fashion',
+          quote: 'Dulu aku bingung mau ngatur link semua kontenku. Sekarang, pake Linxit.id aku bisa bikin halaman bio yang kece dan semua link tertata rapih. Aku juga bisa kolaborasi bareng kreator lain buat bikin konten yang lebih keren! Linxit.id, love banget deh!',
+          image: 'https://via.placeholder.com/150' // Ganti dengan URL gambar profil Citra
+        }
+      ];
 
     return (
         <>
             <Head title="Welcome" />
-            <div className="bg-gray-50 text-black/50 dark:bg-black dark:text-white/50">
-                
-                <div className="relative min-h-screen flex flex-col items-center justify-center selection:bg-[#FF2D20] selection:text-white">
-                    <div className="relative w-full max-w-2xl px-6 lg:max-w-7xl">
-
-                        <main className="mt-6">
-                            <div className="grid lg:grid-cols-2 lg:gap-8 justify-items-center">
-                            
-                                
-                                    <Link href="/" class="relative flex h-20 w-auto justify-items-center">
-                                        <ApplicationLogo className="absolute inline-flex h-20 w-auto fill-[#5ae56e] text-gray-800 dark:text-gray-200" />
-                                        <ApplicationLogo className="relative inline-flex h-20 w-auto fill-[#5ae56e] text-gray-800 dark:text-gray-200 motion-safe:animate-ping opacity-25" />
-                                    </Link>
-                                
-                           
-                               <h3 className="p-6 text-center text-gray-900 dark:text-gray-100 text-9xl font-black">Preparing Step For Your Future</h3>
-                               <h1 className="p-6 text-center text-gray-900 dark:text-gray-100 text-xl font-light motion-safe:animate-bounce">Coming Soon</h1>
-                            </div>
-                        </main>
-
-                        <footer className="py-16 text-center text-sm text-black dark:text-white/70">
-                           Linxit.id &copy; 2024
-                        </footer>
-                    </div>
+            <div className="bg-gray-100 dark:bg-gray-900 min-h-screen">
+            {/* Hero Section */}
+            <motion.section
+                initial={{ opacity: 0, y: 50 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 1 }}
+                className="bg-gray-100 dark:bg-gray-900 py-20"
+            >
+                <div className="container mx-auto px-4 text-center">
+                <h1 className="text-4xl font-bold text-green-500 dark:text-white mb-4">
+                    Tingkatkan Brand & Bisnis Anda dengan Linxit.id!
+                </h1>
+                <p className="text-xl text-gray-600 dark:text-gray-300 mb-8">
+                    Solusi lengkap untuk membangun brand, mengelola konten, dan menjual produk digital secara mudah dan efektif.
+                </p>
+                <motion.button
+                    whileHover={{ scale: 1.1 }}
+                    whileTap={{ scale: 0.95 }}
+                    className="bg-yellow-500 hover:bg-yellow-700 text-white font-bold py-2 px-4 rounded"
+                >
+                    Mulailah Gratis
+                </motion.button>
                 </div>
+            </motion.section>
+
+            {/* Features Section */}
+            <motion.section
+                initial={{ opacity: 0, y: 50 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 1, delay: 0.2 }}
+                className="py-20"
+            >
+                <div className="container mx-auto px-4">
+                <h2 className="text-3xl font-bold text-green-500 dark:text-white mb-8">
+                    Keunggulan Linxit.id
+                </h2>
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <motion.div
+                    initial={{ opacity: 0, y: 50 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 1, delay: 0.2 }}
+                    className="bg-white rounded-lg shadow-md p-6"
+                    >
+                    <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-2">
+                        Editor Drag-and-Drop
+                    </h3>
+                    <p className="text-gray-600 dark:text-gray-400">
+                        Buat halaman bio dengan mudah menggunakan editor drag-and-drop yang intuitif.
+                    </p>
+                    </motion.div>
+                    <motion.div
+                    initial={{ opacity: 0, y: 50 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 1, delay: 0.4 }}
+                    className="bg-white rounded-lg shadow-md p-6"
+                    >
+                    <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-2">
+                        Kolaborasi yang Kuat
+                    </h3>
+                    <p className="text-gray-600 dark:text-gray-400">
+                        Bekerja sama dengan kreator lain untuk membangun halaman bio yang menarik dan efektif.
+                    </p>
+                    </motion.div>
+                    <motion.div
+                    initial={{ opacity: 0, y: 50 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 1, delay: 0.6 }}
+                    className="bg-white rounded-lg shadow-md p-6"
+                    >
+                    <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-2">
+                        Pembayaran Aman dan Cepat
+                    </h3>
+                    <p className="text-gray-600 dark:text-gray-400">
+                        Terima pembayaran dengan mudah dan aman melalui integrasi Midtrans.
+                    </p>
+                    </motion.div>
+                    <motion.div
+                    initial={{ opacity: 0, y: 50 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 1, delay: 0.8 }}
+                    className="bg-white rounded-lg shadow-md p-6"
+                    >
+                    <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-2">
+                        Analitik yang Komprehensif
+                    </h3>
+                    <p className="text-gray-600 dark:text-gray-400">
+                        Lacak kinerja halaman Anda dan optimalkan strategi dengan analitik yang komprehensif.
+                    </p>
+                    </motion.div>
+                </div>
+                </div>
+            </motion.section>
+
+            {/* Testimonials Section */}
+            <Testimonials testimonials={testimonials} />
+
+            {/* Call to Action Section */}
+            <motion.section
+                initial={{ opacity: 0, y: 50 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 1, delay: 1.6 }}
+                className="bg-gray-200 dark:bg-gray-800 py-16"
+            >
+                <div className="container mx-auto px-4 text-center">
+                <h2 className="text-3xl font-bold text-green-500 dark:text-white mb-4">
+                    Mulailah Perjalanan Anda dengan Linxit.id
+                </h2>
+                <motion.button
+                    whileHover={{ scale: 1.1 }}
+                    whileTap={{ scale: 0.95 }}
+                    className="bg-yellow-500 hover:bg-yellow-700 text-white font-bold py-2 px-4 rounded"
+                >
+                    Mulailah Gratis
+                </motion.button>
+                </div>
+            </motion.section>
+
+            {/* Footer Section */}
+            <motion.footer
+                initial={{ opacity: 0, y: 50 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 1, delay: 1.8 }}
+                className="bg-gray-100 dark:bg-gray-900 py-8 text-center"
+            >
+                <div className="container mx-auto px-4">
+                <p className="text-gray-600 dark:text-gray-400">
+                    © {new Date().getFullYear()} Linxit.id. All rights reserved.
+                </p>
+                <ul className="mt-4">
+                    <li className="inline-block mx-2">
+                    <a href="#" className="text-gray-600 dark:text-gray-400 hover:text-green-500">
+                        Kebijakan Privasi
+                    </a>
+                    </li>
+                    <li className="inline-block mx-2">
+                    <a href="#" className="text-gray-600 dark:text-gray-400 hover:text-green-500">
+                        Persyaratan Layanan
+                    </a>
+                    </li>
+                    <li className="inline-block mx-2">
+                    <a href="#" className="text-gray-600 dark:text-gray-400 hover:text-green-500">
+                        Tentang Kami
+                    </a>
+                    </li>
+                </ul>
+                </div>
+            </motion.footer>
             </div>
         </>
     );
